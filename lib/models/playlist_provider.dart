@@ -10,19 +10,19 @@ class PlaylistProvider extends ChangeNotifier {
         artistName: 'Daft Punk',
         AlbumArtImagePath: 'assets/images/Discovery.jpg',
         audioPath:
-            'assets/audio/Daft Punk - Harder, Better, Faster, Stronger (Official Audio).mp3'),
+            'audio/Daft Punk - Harder, Better, Faster, Stronger (Official Audio).mp3'),
     Song(
         songName: 'Digital Baptism',
         artistName: 'Falconite',
         AlbumArtImagePath: 'assets/images/Digital Baptism.jpg',
-        audioPath: 'assets/audio/Digital Baptism.mp3'),
+        audioPath: 'audio/Digital Baptism.mp3'),
     Song(
         songName: 'Infinity Repeating  ',
         artistName: 'Daft Punk',
         AlbumArtImagePath:
             'assets/images/Random Access Memories(10th Anniversary Edition).jpg',
         audioPath:
-            'assets/audio/Infinity Repeating (2013 Demo) (feat. Julian Casablancas+The Voidz).mp3'),
+            'audio/Infinity Repeating (2013 Demo) (feat. Julian Casablancas+The Voidz).mp3'),
   ];
   // current song playing
   int? _currentSongIndex;
@@ -33,7 +33,7 @@ class PlaylistProvider extends ChangeNotifier {
  */
 
   // audio player
-  final AudioPlayer _audioPlayer = AudioPlayer();
+  final AudioPlayer _audioPlayer = AudioPlayer(); 
 
   // durations
   Duration _currentDuration = Duration.zero;
