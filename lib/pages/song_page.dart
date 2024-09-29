@@ -8,8 +8,8 @@ class SongPage extends StatelessWidget {
 
   // convert duration into min:sec
   String formatTime(Duration duration) {
-    String twoDigitSeconds = duration.inSeconds.remainder(60).toString().padLeft(2,'0');
-    String formattedTime = '${duration.inMinutes}:$duration.twoDigitSeconds';
+     
+    String formattedTime = '${duration.inMinutes}:${(duration.inSeconds % 60).toString().padLeft(2, '0')}';
 
     return formattedTime;
   }
@@ -116,9 +116,9 @@ class SongPage extends StatelessWidget {
                           // start time
                           Text(formatTime(value.currentDuration)),
                           // shuffle icon
-                          Icon(Icons.shuffle),
+                          const Icon(Icons.shuffle),
                           // repeat icon
-                          Icon(Icons.repeat),
+                          const Icon(Icons.repeat),
                           // end time
                           Text(formatTime(value.totalDuraion)),
                         ],
@@ -134,7 +134,7 @@ class SongPage extends StatelessWidget {
                       child: Slider(
                         min: 0,
                         max: value.totalDuraion.inSeconds.toDouble(),
-                        value: value.totalDuraion.inSeconds.toDouble(),
+                        value: value.currentDuration.inSeconds.toDouble(),
                         activeColor: Colors.green,
                         onChanged: (double double) {},
                         onChangeEnd: (double double) {
